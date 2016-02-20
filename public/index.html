@@ -10,8 +10,14 @@
     <li class="chat page">
       <div class="chatArea">
         <ul class="messages"></ul>
+        <input class="inputMessage" placeholder="Type here..."/>
       </div>
-      <input class="inputMessage" placeholder="Type here..."/>
+      <div class="gameArea">
+        <audio id="clearsound" src="public/sound/pop.ogg" preload="auto"></audio>
+        <button id="playBtn">Play</button>
+        <p id="pointsBar">0</p>
+        <canvas width='300' height='600'></canvas>
+      </div>
     </li>
     <li class="login page">
       <div class="form">
@@ -24,5 +30,8 @@
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="/main.js"></script>
+  <script src="/tetris/tetris.js"></script>
+  <script src="/tetris/render.js"></script>
+  <script src="/tetris/controller.js"></script>
 </body>
 </html>
