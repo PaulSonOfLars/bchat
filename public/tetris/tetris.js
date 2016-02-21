@@ -183,8 +183,12 @@ function keyPress(key) {
             }
             break;
         case 'pause':
-            toggle();
-
+            if (isPaused) {
+                unPause();
+            } else {
+                pause();
+            }
+            break;
     }
 }
 
