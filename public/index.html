@@ -1,11 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  
   <title>BChat</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <header>
+    <nav id="top-nav" class="cyan">                                                          
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Our Chat App</a>
+        <div class="right hide-on-med-and-down medium">
+          <i class="tiny material-icons left yellow-text grade"></i>
+          <strong id="pointsBar">0</strong>
+          Points
+        </div>
+      </div>
+    </nav>
+  </header>
+
   <ul class="pages">
     <li class="chat page">
       <div class="chatArea">
@@ -15,7 +32,6 @@
       <div class="gameArea">
         <audio id="clearsound" src="public/sound/pop.ogg" preload="auto"></audio>
         <button id="playBtn">Play</button>
-        <p id="pointsBar">0</p>
         <canvas width='300' height='600'></canvas>
       </div>
     </li>

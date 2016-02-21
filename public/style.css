@@ -156,3 +156,7 @@ ul {
   right: 0;
   width: 100%;
 }
+
+.nav-wrapper {
+  padding: 0 30px;
+}
