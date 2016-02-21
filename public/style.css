@@ -152,16 +152,19 @@ ul {
 
 /* Input */
 
-.inputMessage {
-  border: 10px solid #000;
-  bottom: 0;
+.chatArea .inputMessage {
+  background-color: #fff !important;
   height: 60px;
-  left: 0;
   outline: none;
-  padding-left: 10px;
-  position: absolute;
-  right: 0;
-  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0;
+  padding: 30px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2) !important;
+  border-width: 0 !important;
+  font-size: 125%;
 }
 
 .nav-wrapper {
@@ -180,3 +183,5 @@ ul {
 .messages .message.me {
   float: right;
 }
+
+
