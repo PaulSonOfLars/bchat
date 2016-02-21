@@ -7,6 +7,7 @@ document.body.onkeydown = function(e) {
         80: 'pause'
     };
     if (typeof keys[e.keyCode] != 'undefined') {
+        if (isPaused && e.keyCode != 80) {}
         keyPress(keys[e.keyCode]);
         render();
     }
