@@ -169,6 +169,7 @@ ul {
 }
 
 .messages .message {
+  font-size: 70%;
   font-weight: normal;
   display: block !important;
   clear: both;
