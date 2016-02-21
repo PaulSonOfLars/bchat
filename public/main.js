@@ -1,4 +1,5 @@
 $(function() {
+    var firstRun = true;
     var FADE_TIME = 150; // ms
     var TYPING_TIMER_LENGTH = 400; // ms
     var COLORS = [
@@ -15,12 +16,27 @@ $(function() {
 
     var $loginPage = $('.login.page'); // The login page
     var $chatPage = $('.chat.page'); // The chatroom page
-    var $playBtn = $('#playBtn'); // Game button
+    var $playTetrisBtn = $('#playTetrisBtn'); // Game button
+    var $stopTetrisBtn = $('#stopTetrisBtn'); // Stop Game button
     var $pointsBar = $('#pointsBar')[0]; // Game button
 
     // Listen for game start
-    $playBtn.on('click', function(e) {
-        toggle();
+    $playTetrisBtn.on('click', function(e) {
+        if (firstRun){
+            firstRun = false;
+            start();
+        } else if (!inProgress) {
+            start();
+        } else if (!isPaused){
+            pause();
+        } else {
+            unPause();
+        }
+    })
+
+    //Listen for game stop
+    $stopTetrisBtn.on('click', function(e) {
+        stop();
     })
 
     // Prompt for setting a username

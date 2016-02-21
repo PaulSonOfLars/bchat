@@ -4,10 +4,33 @@ var W = 300,
     H = 600;
 var BLOCK_W = W / COLS,
     BLOCK_H = H / ROWS;
+var inProgress = false;
 var isPaused = true;
 
-function toggle(){
-    isPaused = !isPaused;
+function pause(){
+    document.getElementById('playTetrisBtn').innerHTML = "unpause Tetris";
+    isPaused = true;
+}
+
+function unPause(){
+    document.getElementById('playTetrisBtn').innerHTML = "Pause Tetris";
+    isPaused = false;
+}
+
+function start() {
+    inProgress = true;
+    newGame()
+    document.getElementById('game').setAttribute("width", "300");
+    document.getElementById('game').setAttribute("height", "600");
+    unPause();
+}
+
+function stop() {
+    pause();
+    inProgress = false;
+    document.getElementById('game').setAttribute("width", "0");
+    document.getElementById('game').setAttribute("height", "0");
+    document.getElementById('playTetrisBtn').innerHTML = "restart Tetris";
 }
 
 // draw a single square at (x, y)
