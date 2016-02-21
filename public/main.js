@@ -16,28 +16,47 @@ $(function() {
 
     var $loginPage = $('.login.page'); // The login page
     var $chatPage = $('.chat.page'); // The chatroom page
-    var $playTetrisBtn = $('#playTetrisBtn'); // Game button
-    var $stopTetrisBtn = $('#stopTetrisBtn'); // Stop Game button
+    var $playTetrisBtn = $('#playTetrisBtn'); // Start Tetris game button
+    var $stopTetrisBtn = $('#stopTetrisBtn'); // Stop Tetris game button
+    var $playBrickBreakerBtn = $('#playBrickBreakerBtn'); //Start Brickbreaker game button
+    var $stopBrickBreakerBtn = $('#stopBrickBreakerBtn'); //Stop Brickbreaker game button
     var $pointsBar = $('#pointsBar')[0]; // Game button
 
     // Listen for game start
     $playTetrisBtn.on('click', function(e) {
         if (firstRun){
             firstRun = false;
-            start();
+            startTetris();
         } else if (!inProgress) {
-            start();
+            startTetris();
         } else if (!isPaused){
-            pause();
+            pauseTetris();
         } else {
-            unPause();
+            unPauseTetris();
         }
-    })
+    });
 
     //Listen for game stop
     $stopTetrisBtn.on('click', function(e) {
-        stop();
-    })
+        stopTetris();
+    });
+
+    $playBrickBreakerBtn.on('click', function(e) {
+        if (firstRun){
+            firstRun = false;
+            startBrickBreaker();
+        } else if (!inProgress) {
+            startBrickBreaker();
+        } else if (!isPaused){
+            pauseBrickBreaker();
+        } else {
+            unPauseBrickBreaker();
+        }
+    });
+
+    $stopBrickBreakerBtn.on('click', function(e) {
+        stopBrickBreaker();
+    });
 
     // Prompt for setting a username
     var username;

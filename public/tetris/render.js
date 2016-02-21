@@ -7,26 +7,26 @@ var BLOCK_W = W / COLS,
 var inProgress = false;
 var isPaused = true;
 
-function pause(){
+function pauseTetris(){
     document.getElementById('playTetrisBtn').innerHTML = "unpause Tetris";
     isPaused = true;
 }
 
-function unPause(){
+function unPauseTetris(){
     document.getElementById('playTetrisBtn').innerHTML = "Pause Tetris";
     isPaused = false;
 }
 
-function start() {
+function startTetris() {
     inProgress = true;
     newGame()
-    document.getElementById('game').setAttribute("width", "300");
-    document.getElementById('game').setAttribute("height", "600");
-    unPause();
+    document.getElementById('game').setAttribute("width", W);
+    document.getElementById('game').setAttribute("height", H);
+    unPauseTetris();
 }
 
-function stop() {
-    pause();
+function stopTetris() {
+    pauseTetris();
     inProgress = false;
     document.getElementById('game').setAttribute("width", "0");
     document.getElementById('game').setAttribute("height", "0");
