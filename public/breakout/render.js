@@ -2,34 +2,35 @@
  * Created by Paul on 21/02/2016.
  */
 
-var canvas = document.getElementsById('game');
+var canvas = document.getElementById('game');
 var ctx = canvas.getContext('2d');
-var W = 480,
-    H = 320;
-var inProgress = false;
-var isPaused = true;
+var bbW = 480,
+    bbH = 320;
+var brickBreakerInProgress = false;
+var brickBreakerIsPaused = true;
 
 function pauseBrickBreaker(){
     document.getElementById('playBrickBreakerBtn').innerHTML = "unpause BrickBreaker";
-    isPaused = true;
+    brickBreakerIsPaused = true;
 }
 
 function unPauseBrickBreaker(){
     document.getElementById('playBrickBreakerBtn').innerHTML = "Pause BrickBreaker";
-    isPaused = false;
+    brickBreakerIsPaused = false;
 }
 
-function startBrickBreaker() {
-    inProgress = true;
-    newGame();
-    document.getElementById('game').setAttribute("width", W);
-    document.getElementById('game').setAttribute("height", H);
+function startFUCKINGBrickBreaker() {
+    console.log("you fucking got here!");
+    brickBreakerInProgress = true;
+    newBrickBreakerGame();
+    document.getElementById('game').setAttribute("width", bbW);
+    document.getElementById('game').setAttribute("height", bbH);
     unPauseBrickBreaker();
 }
 
 function stopBrickBreaker() {
     pauseBrickBreaker();
-    inProgress = false;
+    brickBreakerInProgress = false;
     document.getElementById('game').setAttribute("width", "0");
     document.getElementById('game').setAttribute("height", "0");
     document.getElementById('playBrickBreakerBtn').innerHTML = "restart BrickBreaker";

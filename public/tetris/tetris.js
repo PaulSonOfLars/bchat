@@ -102,7 +102,7 @@ function tick() {
         freeze();
         clearLines();
         if (lose) {
-            newGame();
+            newTetrisGame();
             points = 0;
             $pointsBar.innerHTML = points;
             return false;
@@ -216,7 +216,7 @@ function valid(offsetX, offsetY, newCurrent) {
     return true;
 }
 
-function newGame() {
+function newTetrisGame() {
     clearInterval(interval);
     init();
     newShape();
@@ -228,4 +228,4 @@ function newGame() {
     }, 250);
 }
 
-newGame();
+newTetrisGame();

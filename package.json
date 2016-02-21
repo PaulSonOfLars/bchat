@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Chat + game",
   "main": "index.js",
-  "author": "Tencho Tenev and friends",
+  "author": "Tencho Tenev and Paul Larsen and some other fools",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
