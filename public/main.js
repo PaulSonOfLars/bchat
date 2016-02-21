@@ -45,10 +45,10 @@ $(function() {
     $playBrickBreakerBtn.on('click', function(e) {
         if (firstRun){
             firstRun = false;
-            startBrickBreaker();
-        } else if (!inProgress) {
-            startBrickBreaker();
-        } else if (!isPaused){
+            startFUCKINGBrickBreaker();
+        } else if (!brickBreakerInProgress) {
+            startFUCKINGBrickBreaker();
+        } else if (!brickBreakerIsPaused){
             pauseBrickBreaker();
         } else {
             unPauseBrickBreaker();
@@ -103,7 +103,7 @@ $(function() {
         if (message && connected) {
             if (message.length > points) {
                 // Not enough points to send message
-                // TODO : display message to user
+                alert("Not enough points to send a message! Try playing a game to get some points.")
             } else {
                 // Deduct points
                 points -= message.length;
@@ -143,10 +143,16 @@ $(function() {
             .text(data.message);
 
         var typingClass = data.typing ? 'typing' : '';
-        var $messageDiv = $('<li class="message"/>')
+        var $messageDiv = $('<li class="message chip"/>')
             .data('username', data.username)
             .addClass(typingClass)
             .append($usernameDiv, $messageBodyDiv);
+
+
+        if (data.username == username) {
+          $messageDiv.addClass("me").addClass("cyan").addClass("white-text");
+          $messageDiv.find('.username').remove();
+        } 
 
         addMessageElement($messageDiv, options);
     }
