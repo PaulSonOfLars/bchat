@@ -87,7 +87,7 @@ $(function() {
             } else {
                 // Deduct points
                 points -= message.length;
-                $pointsBar.innerText = points;
+                $pointsBar.innerHTML = points;
 
                 $inputMessage.val('');
                 addChatMessage({
