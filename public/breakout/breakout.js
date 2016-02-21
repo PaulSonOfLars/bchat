@@ -2,7 +2,7 @@
  * Created by Paul on 21/02/2016.
  */
 
-var canvas = document.getElementById("myCanvas");
+var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
 
 var x = canvas.width / 2;
@@ -87,7 +87,7 @@ function drawBall() {
             dy = -dy;
         } else {
             alert("GAME OVER");
-            newgame();
+            newBrickBreakerGame();
         }
     }
 
@@ -144,7 +144,7 @@ function collisionDetection() {
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
                         alert("YOU WIN, CONGRATULATIONS!");
-                        newgame();
+                        newBrickBreakerGame();
                     }
                 }
             }
@@ -158,9 +158,13 @@ function drawScore() {
     ctx.fillText("Score: "+score, 8, 20);
 }
 
-function newgame() {
-    document.location.reload();
+function newBrickBreakerGame() {
+    ctx.clearRect(0,0,W,H);
 }
 
 
-setInterval(draw, 10);
+setInterval(function() {
+    if (!brickBreakerIsPaused) {
+        draw()
+    }
+}, 10);

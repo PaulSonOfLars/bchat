@@ -19,7 +19,7 @@ function unPauseTetris(){
 
 function startTetris() {
     inProgress = true;
-    newGame()
+    newTetrisGame()
     document.getElementById('game').setAttribute("width", W);
     document.getElementById('game').setAttribute("height", H);
     unPauseTetris();
