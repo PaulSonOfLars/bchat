@@ -5,8 +5,8 @@
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
 
-var x = canvas.width / 2;
-var y = canvas.height - 50;
+var x = bbW / 2;
+var y = bbH - 50;
 var randx = Math.round(Math.random() * (Math.random() > 0.5 ? 1 : (-1)) * 5);
 var randy = Math.round(Math.random() * (Math.random() > 0.5 ? 1 : (-1)) * 5);
 var dx = ((randx < 4 && randx > 1) || (randx > (-4) && randx < (-1))) ?
@@ -17,8 +17,8 @@ var ballRadius = 10;
 
 var paddleHeight = 10;
 var paddleWidth = 75;
-var paddleX = (canvas.width - paddleWidth) / 2;
-var paddleY = canvas.height - 30;
+var paddleX = (bbW - paddleWidth) / 2;
+var paddleY = bbH - 30;
 
 var rightPressed = false;
 var leftPressed = false;
@@ -86,7 +86,6 @@ function drawBall() {
         if (x > paddleX - 3 && x < paddleX + paddleWidth + 3) {
             dy = -dy;
         } else {
-            alert("GAME OVER");
             newBrickBreakerGame();
         }
     }
@@ -160,6 +159,7 @@ function drawScore() {
 
 function newBrickBreakerGame() {
     ctx.clearRect(0,0,W,H);
+    init();
 }
 
 
