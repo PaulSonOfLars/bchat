@@ -167,3 +167,15 @@ ul {
 .nav-wrapper {
   padding: 0 30px;
 }
+
+.messages .message {
+  font-weight: normal;
+  display: block !important;
+  clear: both;
+  margin-top: 5px;
+  float: left;
+}
+
+.messages .message.me {
+  float: right;
+}
