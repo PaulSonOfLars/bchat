@@ -2,12 +2,10 @@
  * Created by Paul on 21/02/2016.
  */
 
-var canvas = document.getElementsByTagName('canvas')[0];
+var canvas = document.getElementsById('game');
 var ctx = canvas.getContext('2d');
 var W = 480,
     H = 320;
-var BLOCK_W = W / COLS,
-    BLOCK_H = H / ROWS;
 var inProgress = false;
 var isPaused = true;
 
