@@ -3,9 +3,17 @@ var COLS = 10,
 var board = [];
 var lose;
 var interval;
-var current; // current moving shape
 var currentX, currentY; // position of current shape
 var gamePaused = false;
+var current; // current moving shape
+
+var points = 0;
+var $pointsBar  = $('#pointsBar')[0];
+
+var colors = [
+    'cyan', 'orange', 'blue', 'yellow', 'red', 'green', 'purple'
+];
+
 var shapes = [
     [0, 0, 0, 0,
         1, 1, 1, 1,
@@ -49,13 +57,6 @@ var shapes = [
         0, 0, 0, 0
     ]
 ];
-
-var colors = [
-    'cyan', 'orange', 'blue', 'yellow', 'red', 'green', 'purple'
-];
-
-var points = 0;
-var $pointsBar  = $('#pointsBar')[0];
 
 // creates a new 4x4 shape in global variable 'current'
 // 4x4 so as to cover the size when the shape is rotated
@@ -184,9 +185,9 @@ function keyPress(key) {
             break;
         case 'pause':
             if (isPaused) {
-                unPause();
+                unPauseTetris();
             } else {
-                pause();
+                pauseTetris();
             }
             break;
     }

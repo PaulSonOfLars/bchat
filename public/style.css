@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+canvas {
+  display: block;
+  margin: auto;
+  border: 1px solid black;
+  background: #eee;
+}
+
 html {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
