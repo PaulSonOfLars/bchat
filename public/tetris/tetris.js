@@ -104,7 +104,7 @@ function tick() {
         if (lose) {
             newGame();
             points = 0;
-            $pointsBar.innerText = points;
+            $pointsBar.innerHTML = points;
             return false;
         }
         newShape();
@@ -147,7 +147,7 @@ function clearLines() {
         }
         if (rowFilled) {
             points += 10;
-            $pointsBar.innerText = points;
+            $pointsBar.innerHTML = points;
             //adds 10 points by line
             document.getElementById('clearsound').play();
             for (var yy = y; yy > 0; --yy) {
