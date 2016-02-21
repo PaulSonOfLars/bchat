@@ -142,10 +142,16 @@ $(function() {
             .text(data.message);
 
         var typingClass = data.typing ? 'typing' : '';
-        var $messageDiv = $('<li class="message"/>')
+        var $messageDiv = $('<li class="message chip"/>')
             .data('username', data.username)
             .addClass(typingClass)
             .append($usernameDiv, $messageBodyDiv);
+
+
+        if (data.username == username) {
+          $messageDiv.addClass("me").addClass("cyan").addClass("white-text");
+          $messageDiv.find('.username').remove();
+        } 
 
         addMessageElement($messageDiv, options);
     }

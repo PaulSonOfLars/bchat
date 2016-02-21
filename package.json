@@ -4,6 +4,9 @@
   "description": "Chat + game",
   "main": "index.js",
   "author": "Tencho Tenev and Paul Larsen and some other fools",
+  "scripts": {
+    "start": "node index.js"
+    },
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
